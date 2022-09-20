@@ -1,0 +1,47 @@
+/* --- TOP SECTION --- */
+body {
+margin: 0   
+}
+
+.topSection{
+    position: relative;
+    top:0px;
+    height: 80vh;
+}
+.topSection::before {
+    content: "";
+    background-image: url('https://s.yimg.com/os/creatr-uploaded-images/2020-01/8129d430-393a-11ea-bbfe-64598fa98387');
+    background-size: cover;
+    position: absolute;
+    top: -30px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.4;
+}
+.title{
+    margin: 0 auto;
+    margin-top: 30px;
+    text-align: center;
+    width: 50%;    ;
+    color: rgb(17, 17, 17);
+    font-size: 3rem;
+}
+.titleInfo{
+    margin: 20px auto;
+    width: 40%;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.eventBtn {
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    outline: none;
+    border:none;
+    margin-top: 8px;
+    cursor: pointer;
+
+}
