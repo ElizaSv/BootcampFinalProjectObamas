@@ -44,26 +44,26 @@ const Auth = ({requestURL, buttonText, userName, password, email}) => {
           <div className="authInput">
             {userName&&
             <>
-            <label>{"userName"}</label>
+            <label>{"User name"}</label>
             <input
               onChange={handleChange}
               type="text"
               name="userName"
               placeholder="userName"
             /></>}
-            <label>{"password"}</label>
+            <label>{"Password"}</label>
             <input
               onChange={handleChange}
               type="password"
               name="password"
               placeholder={"password"}
             />
-            <label>{"email"}</label>
+            <label>{"E-mail"}</label>
             <input
               onChange={handleChange}
               type="email"
               name="email"
-              placeholder={"email"}
+              placeholder={"e-mail"}
             />
           </div>
           <div className="authButton">
