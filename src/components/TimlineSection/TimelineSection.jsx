@@ -1,6 +1,7 @@
 import { VerticalTimelineElement } from "react-vertical-timeline-component/dist-modules";
 import VerticalTimeline from "react-vertical-timeline-component/dist-modules/VerticalTimeline";
 import 'react-vertical-timeline-component/style.min.css';
+import './TimelineSection.css'
 
 const TimelineSection = (props) => {
   return (

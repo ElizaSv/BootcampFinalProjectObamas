@@ -1,8 +1,8 @@
 import React from 'react'
 import "./frontPage.css";
-import TimelineSection from '../../components/TimelineSection';
-import TopSection from '../../components/TopSection';
 import eventData from "../../data.js"
+import TimelineSection from '../../components/TimlineSection/TimelineSection';
+import TopSection from '../../components/TopSection/TopSection';
 
 
 const FrontPage = () => {

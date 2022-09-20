@@ -1,4 +1,5 @@
-import "../components/ComponentStyles.css"
+import './TopSection.css'
+
 const TopSection = () => {
   return (
     <div className="topSection">

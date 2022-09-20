@@ -1,0 +1,21 @@
+/* --- TIMELINE SECTION styles --- */
+.timelineWrapper {
+    display:flex;
+    flex-direction: column;
+}
+
+.vertical-timeline::before {
+    background: rgb(59, 59, 59)
+}
+.vertical-timeline-element--work {
+    align-items: flex-end;
+}
+.eventBtn {
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    outline: none;
+    border:none;
+    margin-top: 8px;
+    cursor: pointer;
+}
