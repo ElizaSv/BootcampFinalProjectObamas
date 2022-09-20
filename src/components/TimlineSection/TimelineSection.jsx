@@ -4,7 +4,7 @@ import '..//TimlineSection/TimelineSection.css'
 
 const TimelineSection = (props) => {
   return (
-          <VerticalTimelineElement 
+        <VerticalTimelineElement 
             className="vertical-timeline-element--work"
             contentStyle={{ background: 'rgb(123, 123, 123)', color: 'ghostwhite' }}
             contentArrowStyle={{ borderRight: '7px solid  rgb(123, 123, 123)' }}
@@ -14,8 +14,6 @@ const TimelineSection = (props) => {
             <h3 className="vertical-timeline-element-title">{props.year} {props.month}</h3>
             <h4 className="vertical-timeline-element-subtitle">{props.event}</h4>
             <p>{props.notes}</p>
-            <button className="eventBtn" onClick={() => window.open((props.external), "_blank")}>Read more</button>
-
         </VerticalTimelineElement>
   )
 }
