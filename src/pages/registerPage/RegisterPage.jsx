@@ -4,6 +4,7 @@ import "./registerPage.css"
 const RegisterPage = () => {
   return (
     <Auth 
+    requestURL = "registration"
     userName={"New User Name"}
     password={"New Password"}
     email={"New email"}

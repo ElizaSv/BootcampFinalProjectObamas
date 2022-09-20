@@ -4,7 +4,7 @@ import "./loginPage.css"
 const LoginPage = () => {
   return (
     <Auth 
-        userName={"username"}
+        requestURL = "login"
         password={"password"}
         email={"email"}
         buttonText={"login"}
