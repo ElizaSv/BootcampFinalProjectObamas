@@ -1,30 +1,42 @@
 .auth{
+    
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: calc(100vh - 150px);
+    height: 100vh;
+    background-image: url('https://s.yimg.com/os/creatr-uploaded-images/2020-01/8129d430-393a-11ea-bbfe-64598fa98387');
+    background-repeat: no-repeat;
+    background-position: center;
 }
-.authWrapper{
+ .authWrapper{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60%;
-    height: 80%;
-    
-}
+    width: 30%;
+    height: 60%;
+
+} 
 .authMain{
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
     height: 250px;
-    width: 150px;
+    width: 45%;
     border: 1px solid gray;
-
+ 
 }
+.authInput{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 .authInput input {
     width: 100%;
+    padding: 5px;
+    margin-top: 6px;
+    margin-bottom: 6px;
 }
 .authButton{
     display: flex;
@@ -40,4 +52,5 @@
     border-radius: 5px;
     background-color: #c2a8a8;
     cursor: pointer;
+    text-transform: uppercase;
 }

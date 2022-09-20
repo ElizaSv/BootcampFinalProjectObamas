@@ -1,7 +1,7 @@
 import React from 'react'
 import "./frontPage.css";
-import TimelineSection from '../TimelineSection';
-import TopSection from '../TopSection';
+import TimelineSection from '../../components/TimelineSection';
+import TopSection from '../../components/TopSection';
 import eventData from "../../data.js"
 
 
