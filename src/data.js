@@ -15,14 +15,9 @@
     year: 1964,
     month: "January",
     both: false,
-<<<<<<< HEAD
     image: "https://arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/2WDP2CABSJHJBGBCRWCD3FDYEY.jpg",
     external: "https://en.wikipedia.org/wiki/Michelle_Obama",
     notes: "Born as Michelle LaVaughn Robinson.",
-=======
-    image: "https://4.bp.blogspot.com/-ZC2cgkvcYFk/XFTiKu42YaI/AAAAAAAAaXo/2E5IQJ2BK1wmSs0NDKeifFkSPKqkZTWGwCLcBGAs/w1200-h630-p-k-no-nu/Baby%2BMichelle.jpg",
-    notes: "Born as Michelle LaVaughn Robinson."
->>>>>>> e3d083b9ed24890a2587ad30a2cf093f3c98813a
 },
 {
     name: "Barack and Michelle Obama",
