@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { VerticalTimelineElement } from "react-vertical-timeline-component/dist-modules";
-import VerticalTimeline from "react-vertical-timeline-component/dist-modules/VerticalTimeline";
 import "react-vertical-timeline-component/style.min.css";
 import "./TimelineSection.css";
 import { Context } from "../../Context";
@@ -17,7 +16,7 @@ const TimelineSection = (props) => {
   }
 
   return (
-    <VerticalTimeline>
+    
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
         contentStyle={{ background: "rgb(59, 59, 59)", color: "ghostwhite" }}
@@ -47,7 +46,6 @@ const TimelineSection = (props) => {
           </>
         )}
       </VerticalTimelineElement>
-    </VerticalTimeline>
   );
 };
 

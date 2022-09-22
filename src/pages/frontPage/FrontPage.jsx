@@ -3,6 +3,7 @@ import "./frontPage.css";
 import eventData from "../../data.js";
 import likes from '../../likes.json'
 import TimelineSection from "../../components/TimlineSection/TimelineSection";
+import VerticalTimeline from "react-vertical-timeline-component/dist-modules/VerticalTimeline";
 import TopSection from "../../components/TopSection/TopSection";
 import { Context } from "../../Context";
 
@@ -38,9 +39,10 @@ const FrontPage = () => {
     .map((i, index) => ({ ...i, ...(likeAggragation[index]||{likes:0,dislikes:0}) })); //This should later go in useState()
 
   return (
-    <>
-      <TopSection />
-      {sortedTimeline.map((elem,index) => {
+    <> 
+    <TopSection />
+    <VerticalTimeline>
+    {sortedTimeline.map((elem,index) => {
         return (
           <TimelineSection
           key={index}
@@ -48,6 +50,7 @@ const FrontPage = () => {
           />
         );
       })}
+    </VerticalTimeline>
     </>
   );
 };
