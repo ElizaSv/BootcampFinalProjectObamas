@@ -1,8 +1,24 @@
 /* --- TIMELINE SECTION styles --- */
 
+/* --- CHANGING BUILT IN CSS FOR VERTICAL TIMELINE COMPONENT --- */
 .vertical-timeline::before {
     background: rgb(123, 123, 123)
 }
+.vertical-timeline-element-content {
+    background-color: rgb(123, 123, 123);
+    color: ghostwhite
+}
+.vertical-timeline-element-content-arrow {
+    border-right: 7px solid  rgb(123, 123, 123);
+}
+.vertical-timeline-element-content-icon{
+    background-color: rgb(123, 123, 123);
+    color: ghostwhite
+}
+
+
+
+/*BUILT IN STYLE EDIT ENDS */ 
 
 .vertical-timeline-element-subtitle {
     font-size: 1.5rem;
@@ -13,10 +29,9 @@
     text-align: right;
 }
 
-span.vertical-timeline-element-icon.bounce-in:focus{
-    background-color: rosybrown
+span.vertical-timeline-element-icon{
+    background-color: rgb(123, 123, 123);
 }
-
 
 .timeline-img {
     width: 100%;
@@ -27,15 +42,12 @@ span.vertical-timeline-element-icon.bounce-in:focus{
     filter: gray; /* IE6-9 */
     -webkit-filter: grayscale(100%);
     transition: 1s;
-
 }
-
 .timeline-img:hover{
     filter: none;
     -webkit-filter: grayscale(0%); 
     transition: 1s;
 }
-
 .event-btn, .like-btn {
     margin: 5px;
     height: 30px;
@@ -45,11 +57,19 @@ span.vertical-timeline-element-icon.bounce-in:focus{
     cursor: pointer;
     color: rgb(123, 123, 123)
 }
-
 .event-btn:hover,
 .like-btn:hover {
     color: rgb(74, 14, 14);
     transition: 0.5s;
     box-shadow: 0 0.5em 0.5em -0.4em  #fffaf7;
     transform: translateY(-0.25em);
+}
+
+@media only screen and (max-width: 1169px) {
+    .vertical-timeline-element--work:nth-child(odd){
+        text-align: left;
+    }
+    .timeline-img {
+        height: 500px
+    }
 }

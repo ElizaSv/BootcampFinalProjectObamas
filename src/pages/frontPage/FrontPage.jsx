@@ -35,11 +35,11 @@ const FrontPage = () => {
   console.log(likeAggragation)
 
 // --- GETTING TIMELINE DATA FROM DATABASE ---//
-const [timelineEvents, setTimelineEvents] = useState([])
+  const [timelineEvents, setTimelineEvents] = useState([])
 
-useEffect(() => {
+  useEffect(() => {
   axios.get('http://localhost:8000/events').then(result => setTimelineEvents(result.data))  
-}, [])
+  }, [])
 
   const sortedTimeline = timelineEvents
     .sort((a, b) => b.year - a.year)
@@ -49,7 +49,7 @@ useEffect(() => {
     <> 
     <TopSection />
     <VerticalTimeline>
-    {sortedTimeline.map((elem,index) => {
+      {sortedTimeline.map((elem,index) => {
         return (
           <TimelineSection
           key={index}

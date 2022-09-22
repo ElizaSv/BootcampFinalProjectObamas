@@ -3,7 +3,7 @@ import { VerticalTimelineElement } from "react-vertical-timeline-component/dist-
 import "react-vertical-timeline-component/style.min.css";
 import "./TimelineSection.css";
 import { Context } from "../../Context";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+//import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 const TimelineSection = (props) => {
   let {user} = useContext(Context)
@@ -14,16 +14,9 @@ const TimelineSection = (props) => {
   function dislikeHandler(){
   }
   return (
-      <VerticalTimelineElement
-        className="vertical-timeline-element--work"
-        contentStyle={{ background: "rgb(123, 123, 123)", color: "ghostwhite" }}
-        contentArrowStyle={{ borderRight: "7px solid  rgb(123, 123, 123)" }}
-        iconStyle={{ background: "rgb(123, 123, 123)", color: "#fff" }}
-      >
+      <VerticalTimelineElement className="vertical-timeline-element--work">
         <img src={props.image} className="timeline-img" alt="history"></img>
-        <h3 className="vertical-timeline-element-title">
-          {props.year} {props.month}
-        </h3>
+        <h3 className="vertical-timeline-element-title">{props.year} {props.month}</h3>
         <h4 className="vertical-timeline-element-subtitle">{props.event}</h4>
         <p>{props.notes}</p>
         <button className="event-btn" onClick={() => window.open(props.more, "_blank")}>Read more</button>
