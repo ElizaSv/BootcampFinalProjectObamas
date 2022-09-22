@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import "./frontPage.css";
 import likes from '../../likes.json'
-import TimelineSection from "../../components/TimlineSection/TimelineSection";
+import TimelineSection from "../../components/TimelineSection/TimelineSection";
 import VerticalTimeline from "react-vertical-timeline-component/dist-modules/VerticalTimeline";
 import TopSection from "../../components/TopSection/TopSection";
 import { Context } from "../../Context";
