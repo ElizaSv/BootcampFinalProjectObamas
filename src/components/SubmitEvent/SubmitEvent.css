@@ -1,0 +1,89 @@
+.submit-wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-image: url('https://s.yimg.com/os/creatr-uploaded-images/2020-01/8129d430-393a-11ea-bbfe-64598fa98387');
+    background-size: cover;
+    position: absolute;
+}
+.descr-wrapper {
+position: relative;
+}
+@keyframes pulse-white {
+    0% {
+      transform: scale(0.95);
+    }
+    70% {
+      transform: scale(1);
+    }    
+    100% {
+      transform: scale(0.95);
+    }
+  }
+
+.triangle::after{
+    content: "";
+    position: absolute;
+    top:30%;
+    right: -6rem;
+    border-width: 3rem;
+    border-style: solid;
+    border-left-color: white;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    animation: pulse-white 1s infinite;
+}
+.content-left{
+    position: relative;
+    margin: 20px;
+    height: 90vh;
+    width: 50%;
+    padding: 20px 40px;
+    background-color: rgb(57, 56, 56);
+    font-size: 2rem;
+    text-align: center;
+    color: ghostwhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+}
+.submit-title{
+    margin: 30px 20px;
+    font-size: 4rem;
+
+}
+.submit-descr {
+    margin-top: 20px;
+}
+
+.content-right {
+    margin: 20px;
+    height: 90vh;
+    width: 50%;
+    padding: 8rem;
+    background-color: rgb(57, 56, 56);
+    opacity: 0.7;
+    font-size: 1.7rem;
+    color: ghostwhite;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.content-right>input {
+    height: fit-content;
+    min-height: 40px;
+    margin: 10px 0;
+    width: 100%;
+    outline: none;
+}
+.content-right>input::placeholder {
+    font-size: 1.2rem;
+    
+}
