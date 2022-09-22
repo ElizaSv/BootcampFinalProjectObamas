@@ -7,7 +7,7 @@
     both: false,
     image: "https://arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/2WDP2CABSJHJBGBCRWCD3FDYEY.jpg",
     external: "https://en.wikipedia.org/wiki/Barack_Obama",
-    notes: "His name has a special meaning: ‘one who is blessed’"
+    notes: "His name has a special meaning: ‘one who is blessed’",
 },
 {
     name: "Michelle Obama",
@@ -17,7 +17,7 @@
     both: false,
     image: "https://arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/2WDP2CABSJHJBGBCRWCD3FDYEY.jpg",
     external: "https://en.wikipedia.org/wiki/Michelle_Obama",
-    notes: "Born as Michelle LaVaughn Robinson."
+    notes: "Born as Michelle LaVaughn Robinson.",
 },
 {
     name: "Barack and Michelle Obama",

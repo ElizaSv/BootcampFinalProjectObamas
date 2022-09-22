@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import axios from "axios";
 import "./auth.css";
 import { useNavigate,useSearchParams } from "react-router-dom";
+import { Context } from "../../Context";
 
 const Auth = ({requestURL, buttonText, userName, password, email}) => {
-  const [formData, setFormData] = React.useState({
+  let {setUser} = useContext(Context)
+  const [formData, setFormData] = useState({
     userName: "",
     password: "",
     email: "",
@@ -23,6 +25,7 @@ const Auth = ({requestURL, buttonText, userName, password, email}) => {
         ...formData,
       });
       if (data.status === 200) {
+        setUser(data.data)
         navigate("/");
       } else {
 
