@@ -3,7 +3,7 @@ import { VerticalTimelineElement } from "react-vertical-timeline-component/dist-
 import "react-vertical-timeline-component/style.min.css";
 import "./TimelineSection.css";
 import { Context } from "../../Context";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+//import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 const TimelineSection = (props) => {
   let {user} = useContext(Context)
