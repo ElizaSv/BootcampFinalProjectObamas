@@ -22,7 +22,6 @@ const TimelineSection = (props) => {
         contentStyle={{ background: "rgb(59, 59, 59)", color: "ghostwhite" }}
         contentArrowStyle={{ borderRight: "7px solid  rgb(59, 59, 59)" }}
         iconStyle={{ background: "rgb(59, 59, 59)", color: "#fff" }}
-        // position={{ right: "50px" }}
       >
         <h3 className="vertical-timeline-element-title">
           {props.year} {props.month}

@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "./frontPage.css";
-import eventData from "../../data.js";
 import likes from '../../likes.json'
 import TimelineSection from "../../components/TimlineSection/TimelineSection";
 import VerticalTimeline from "react-vertical-timeline-component/dist-modules/VerticalTimeline";
 import TopSection from "../../components/TopSection/TopSection";
 import { Context } from "../../Context";
+import axios from 'axios'
 
 const FrontPage = () => {
   let {user} = useContext(Context);
@@ -34,7 +34,14 @@ const FrontPage = () => {
   },{})
   console.log(likeAggragation)
 
-  const sortedTimeline = eventData
+// --- GETTING TIMELINE DATA FROM DATABASE ---//
+const [timelineEvents, setTimelineEvents] = useState([])
+
+useEffect(() => {
+  axios.get('http://localhost:8000/events').then(result => setTimelineEvents(result.data))  
+}, [])
+
+  const sortedTimeline = timelineEvents
     .sort((a, b) => b.year - a.year)
     .map((i, index) => ({ ...i, ...(likeAggragation[index]||{likes:0,dislikes:0}) })); //This should later go in useState()
 
