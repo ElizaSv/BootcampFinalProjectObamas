@@ -22,12 +22,12 @@ const FrontPage = () => {
     }
     if(i.mark){
       obj[i.postId].likes++
-      if(i.personId===user._id){
+      if(user && i.personId===user._id){
         obj[i.postId].youLiked++;
       }
     }else{
       obj[i.postId].dislikes++;
-      if (i.personId === user._id) {
+      if (user && i.personId === user._id) {
         obj[i.postId].youDisliked++;
       }
     }
