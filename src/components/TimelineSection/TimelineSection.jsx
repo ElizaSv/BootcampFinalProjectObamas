@@ -23,8 +23,8 @@ const TimelineSection = (props) => {
         
         {user && (
           <>
-            <button className="like-btn" style={{ background: props.youLiked ? "blue" : "white" }}>Like {props.likes>0? props.likes : null }</button>
-            <button className="like-btn" style={{ background: props.youDisliked ? "red" : "white" }}>      Dislike {props.dislikes>0? props.dislikes : null}</button>
+            <button className="like-btn" disabled={props.youLiked} style={{ background: props.youLiked ? "blue" : "white" }}>Like {props.likes>0? props.likes : null }</button>
+            <button className="like-btn" disabled={props.youDisliked } style={{ background: props.youDisliked ? "red" : "white" }}>Dislike {props.dislikes>0? props.dislikes : null}</button>
           </>
         )}
       </VerticalTimelineElement>
