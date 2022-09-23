@@ -1,6 +1,14 @@
+import axios from 'axios'
 import './SubmitEvent.css'
 
+
 const SubmitEvent = () => {
+
+    const submitEventForm = () => {
+        axios.post('http://localhost:8000/events/new').then(response => alert("Form submitted"))
+    }
+
+
   return (
     <div className='submit-wrapper'>
         <div className='content-left'>
@@ -12,15 +20,16 @@ const SubmitEvent = () => {
         </div>
         <div className='content-right'>
             <label for="event">What was the event?</label>
-            <input type="text" placeholder=" e.g. Obama in local charity party" name="event"></input>
+            <input type="text" placeholder=" e.g. Barack Obama in local charity party" name="event"></input>
             <label for="year">When the event took place?</label>
-            <input type="number" placeholder=" write year (e.g. 2009)" name="year"></input>
+            <input type="number" placeholder=" enter year (e.g. 2009)" name="year"></input>
             <label for="month"> What month was that?</label>
             <input type="text" placeholder=" e.g. February" name="month"></input>
             <label for="notes">Please briefly describe what happened in event!</label>
             <input type="text" placeholder=" write your story here..." name="notes"></input>
             <label> Do you have an image from that event? </label>
             <input type="file" accept='image/*' placeholder=' choose your image'></input> 
+            <input type="submit" value="Submit"></input>
         </div>
 
     </div>

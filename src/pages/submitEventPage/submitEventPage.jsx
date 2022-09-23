@@ -1,4 +1,4 @@
-import SubmitEvent from "../../components/SubmitEvent/SubmitEvent";
+import SubmitEvent from "../../components/SubmitEvent/SubmitEvent2";
 import axios from "axios";
 
 const SubmitEventPage = () => {
