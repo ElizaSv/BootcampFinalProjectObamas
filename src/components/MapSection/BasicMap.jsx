@@ -13,9 +13,9 @@ const markerIcon = new L.Icon({
 });
 
 const BasicMap = () => {
-  const [center, setCenter] = useState({ lat: 51.505, lng: 30.258 });
+  const [center, setCenter] = useState({ lat: 45.21, lng: -36.58 });
   const[data,setData] = useState([]);
-  const ZOOM_LEVEL = 9;
+  const ZOOM_LEVEL = 3;
   const mapRef = useRef();
 
 // data fetching
