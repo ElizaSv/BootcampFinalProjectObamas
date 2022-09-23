@@ -76,12 +76,24 @@ position: relative;
     align-items: flex-start;
     justify-content: center;
 }
-.content-right>input {
+
+.error-msg {
+    font-size: 1rem;
+    color:red;
+    position: relative;
+    top:-15px;
+}
+.content-right>form {
+    position: relative;
+}
+.content-right>form>input {
+    position: relative;
     height: fit-content;
     min-height: 40px;
     margin: 10px 0;
     width: 100%;
     outline: none;
+    border-radius: 4px;
 }
 .content-right>input::placeholder {
     font-size: 1.2rem;
