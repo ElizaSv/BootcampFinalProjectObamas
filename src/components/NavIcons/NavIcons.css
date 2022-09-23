@@ -1,11 +1,11 @@
 .links{
-    position: absolute;
+     position: absolute; 
     display: flex;
     flex-direction: column;
     gap: 50px;
     top: 0%;
     left: 95%;
-    z-index: 2s
+    z-index: 999;
 }
 .link-icon{
     height: 22px;

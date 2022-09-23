@@ -6,6 +6,7 @@ import "./basicMap.css";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css"
 import axios from "axios";
+import NavIcons from "../NavIcons/NavIcons";
 
 const markerIcon = new L.Icon({
     iconUrl: require("./mapmarker.png"),
@@ -29,16 +30,17 @@ React.useEffect(()=>{
 
 },[])
 
-
 if(data.length === 0){
   return "Loading...."
 }
 
-
   return (
-    <div className="row">
+   
+    <div className="row"> 
+   
       <div className="col text-center">
         <div className="col">
+      
           <MapContainer  center={center} zoom={ZOOM_LEVEL} ref={mapRef}>
             <TileLayer url={osm.maptiler.url}>
             </TileLayer>
@@ -49,12 +51,15 @@ if(data.length === 0){
                   <Popup>
                       <b>{val.event?val.event:"happy"}</b>
                    </Popup> 
+                   
               </Marker>
+              
                 );
               })
             }
           
           </MapContainer >
+            <NavIcons />
           </div>
         </div>
       </div>
