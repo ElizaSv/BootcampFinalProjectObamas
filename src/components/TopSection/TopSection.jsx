@@ -6,6 +6,7 @@ import {
   faArrowRightToBracket,
   faRegistered,
   faGlobe,
+  faFileUpload
 } from "@fortawesome/free-solid-svg-icons";
 
 const TopSection = () => {
@@ -29,6 +30,9 @@ const TopSection = () => {
         </Link>
         <Link to="/register">
           <FontAwesomeIcon icon={faRegistered}  className="link-icon"/>
+        </Link>
+        <Link to="/submit">
+          <FontAwesomeIcon icon={faFileUpload}  className="link-icon"/>
         </Link>
       </div>
     </div>
