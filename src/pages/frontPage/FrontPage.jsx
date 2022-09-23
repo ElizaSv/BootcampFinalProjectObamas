@@ -45,7 +45,7 @@ useEffect(() => {
 timelineEvents.map((event, index) => ({ ...event, ...(likeAggragation[index]||{likes:0,dislikes:0}) }))
 
 // --- SETTING UP PAGINATION INFO --- //
-const [pageNumber, setPageNumber] = useState(1);
+const [pageNumber, setPageNumber] = useState(0);
 const eventsPerPage = 6;
 const displayedEventCount = pageNumber * eventsPerPage
 
@@ -86,5 +86,4 @@ const changePage = ({selected}) => {
       </div>
   );
 };
-
 export default FrontPage;
