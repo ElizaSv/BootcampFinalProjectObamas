@@ -7,6 +7,7 @@ import TopSection from "../../components/TopSection/TopSection";
 import { Context } from "../../Context";
 import axios from 'axios'
 import NavIcons from "../../components/NavIcons/NavIcons";
+import ReactPaginate from "react-paginate";
 
 const FrontPage = () => {
   let {user} = useContext(Context);
@@ -36,31 +37,53 @@ const FrontPage = () => {
   console.log(likeAggragation)
 
 // --- GETTING TIMELINE DATA FROM DATABASE ---//
-  const [timelineEvents, setTimelineEvents] = useState([])
+const [timelineEvents, setTimelineEvents] = useState([])
+useEffect(() => {
+  axios.get('http://localhost:8000/events').then(result => setTimelineEvents(result.data.sort((a, b) => b.year - a.year)))  
+}, []);
 
-  useEffect(() => {
-  axios.get('http://localhost:8000/events').then(result => setTimelineEvents(result.data))  
-  }, [])
+timelineEvents.map((event, index) => ({ ...event, ...(likeAggragation[index]||{likes:0,dislikes:0}) }))
 
-  const sortedTimeline = timelineEvents
-    .sort((a, b) => b.year - a.year)
-    .map((i, index) => ({ ...i, ...(likeAggragation[index]||{likes:0,dislikes:0}) })); //This should later go in useState()
+// --- SETTING UP PAGINATION INFO --- //
+const [pageNumber, setPageNumber] = useState(1);
+const eventsPerPage = 6;
+const displayedEventCount = pageNumber * eventsPerPage
+
+const displayEvents = timelineEvents.slice(displayedEventCount, displayedEventCount + eventsPerPage)
+.map((event, index) => 
+  {
+    return (
+      <TimelineSection
+        key={index}
+        {...event}
+      />
+    );
+  })
+
+const pageCount = Math.ceil(timelineEvents.length / eventsPerPage)
+const changePage = ({selected}) => {
+  setPageNumber(selected)
+}
 
   return (
-    <> 
-    <NavIcons />
-    <TopSection />
-    <VerticalTimeline>
-      {sortedTimeline.map((elem,index) => {
-        return (
-          <TimelineSection
-          key={index}
-            {...elem}
-          />
-        );
-      })}
-    </VerticalTimeline>
-    </>
+      <div className="parallax">
+        <NavIcons />
+        <TopSection />
+        <VerticalTimeline>
+            {displayEvents}
+        </VerticalTimeline>
+        <ReactPaginate 
+            previousLabel={"Previous"}
+            nextLabel={"Next"}
+            pageCount={pageCount}
+            onPageChange={changePage}
+            containerClassName={"pagination-btn"}
+            previousLinkClassName={"previous-btn"}
+            nextLinkClassName={"next-btn"}
+            disabledClassName={"pagination-disabled"}
+            activeClassName={"active-page"}
+        />
+      </div>
   );
 };
 
