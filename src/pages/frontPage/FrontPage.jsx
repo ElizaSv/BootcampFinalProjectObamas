@@ -6,6 +6,7 @@ import VerticalTimeline from "react-vertical-timeline-component/dist-modules/Ver
 import TopSection from "../../components/TopSection/TopSection";
 import { Context } from "../../Context";
 import axios from 'axios'
+import NavIcons from "../../components/NavIcons/NavIcons";
 
 const FrontPage = () => {
   let {user} = useContext(Context);
@@ -47,6 +48,7 @@ const FrontPage = () => {
 
   return (
     <> 
+    <NavIcons />
     <TopSection />
     <VerticalTimeline>
       {sortedTimeline.map((elem,index) => {

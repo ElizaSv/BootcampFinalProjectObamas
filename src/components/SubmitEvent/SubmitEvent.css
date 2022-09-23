@@ -1,4 +1,4 @@
-.submit-wrapper {
+/* .submit-wrapper {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -8,7 +8,7 @@
     background-image: url('https://s.yimg.com/os/creatr-uploaded-images/2020-01/8129d430-393a-11ea-bbfe-64598fa98387');
     background-size: cover;
     position: absolute;
-}
+} */
 .descr-wrapper {
 position: relative;
 }

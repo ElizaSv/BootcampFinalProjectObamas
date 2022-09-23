@@ -1,13 +1,5 @@
 import "./TopSection.css";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHouse,
-  faArrowRightToBracket,
-  faRegistered,
-  faGlobe,
-  faFileUpload
-} from "@fortawesome/free-solid-svg-icons";
+
 
 const TopSection = () => {
   return (
@@ -18,23 +10,6 @@ const TopSection = () => {
         separate and common journeys... Lorem ipsum, dolor sit amet consectetur
         adipisicing elit. Modi, harum.
       </h4>
-      <div className="links">
-        <Link to="/">
-          <FontAwesomeIcon icon={faHouse} className="link-icon" />
-        </Link>
-        <Link to="/map">
-          <FontAwesomeIcon icon={faGlobe}  className="link-icon"/>
-        </Link>
-        <Link to="/login">
-          <FontAwesomeIcon icon={faArrowRightToBracket}  className="link-icon"/>
-        </Link>
-        <Link to="/register">
-          <FontAwesomeIcon icon={faRegistered}  className="link-icon"/>
-        </Link>
-        <Link to="/submit">
-          <FontAwesomeIcon icon={faFileUpload}  className="link-icon"/>
-        </Link>
-      </div>
     </div>
   );
 };

@@ -1,11 +1,11 @@
 /* --- TOP SECTION STYLE--- */
-  .topSection{
+  /* .topSection{
     position: relative;
     top:0px;
     height: 80vh;
   
-} 
-.topSection::before {
+}  */
+/* .topSection::before {
     content: "";
     background-image: url('https://s.yimg.com/os/creatr-uploaded-images/2020-01/8129d430-393a-11ea-bbfe-64598fa98387');
     background-size: cover;
@@ -16,7 +16,7 @@
     left: 0px;
     opacity: 0.4;
   
-}
+} */
 .title{
     margin: 0 auto;
     margin-top: 80px;
@@ -31,19 +31,4 @@
     text-align: center;
     font-weight: 400;
     font-size: 1.5rem;
-}
-.links{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    top: 0%;
-    left: 95%;
-}
-.link-icon{
-    height: 22px;
-    color: rgba(194, 188, 181, 0.712);
-}
-.link-icon:hover{
-  color: #c2a8a8;
 }

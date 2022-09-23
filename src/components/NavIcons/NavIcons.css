@@ -1,0 +1,17 @@
+.links{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    top: 0%;
+    left: 95%;
+    z-index: 2s
+}
+.link-icon{
+    height: 22px;
+    color: rgba(194, 188, 181, 0.712);
+    z-index: 2;
+}
+.link-icon:hover{
+  color: #c2a8a8;
+}
