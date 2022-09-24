@@ -61,7 +61,7 @@ const displayEvents = timelineEvents.slice(displayedEventCount, displayedEventCo
         }     
 
   return (
-      <>
+      <div className="parallax">
         <NavIcons />
         <TopSection />
         <VerticalTimeline>
@@ -78,7 +78,7 @@ const displayEvents = timelineEvents.slice(displayedEventCount, displayedEventCo
             disabledClassName={"pagination-disabled"}
             activeClassName={"active-page"}
         />
-      </>
+      </div>
   );
 };
 export default FrontPage;
