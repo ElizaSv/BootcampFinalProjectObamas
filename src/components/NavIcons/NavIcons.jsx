@@ -8,24 +8,29 @@ import {
   faGlobe,
   faFileUpload
 } from "@fortawesome/free-solid-svg-icons";
+import { useState } from 'react';
 
 const NavIcons = () => {
+  const [isHovering, setIsHovering] = useState(false);
+  const handleMouseOver = () =>  setIsHovering(true);
+  const handleMouseOut = () => setIsHovering(false)
+
   return (
     <div className="links">
         <Link to="/">
-          <FontAwesomeIcon icon={faHouse} className="link-icon" />
+          <FontAwesomeIcon icon={faHouse} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className={isHovering ? "link-icon fa-bounce" : "link-icon"} />
         </Link>
         <Link to="/map">
-          <FontAwesomeIcon icon={faGlobe}  className="link-icon"/>
+          <FontAwesomeIcon icon={faGlobe}  onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className={isHovering ? "link-icon fa-bounce" : "link-icon"}/>
         </Link>
         <Link to="/login">
-          <FontAwesomeIcon icon={faArrowRightToBracket}  className="link-icon"/>
+          <FontAwesomeIcon icon={faArrowRightToBracket}  onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className={isHovering ? "link-icon fa-bounce" : "link-icon"}/>
         </Link>
         <Link to="/register">
-          <FontAwesomeIcon icon={faRegistered}  className="link-icon"/>
+          <FontAwesomeIcon icon={faRegistered}  onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className={isHovering ? "link-icon fa-bounce" : "link-icon"}/>
         </Link>
         <Link to="/submit">
-          <FontAwesomeIcon icon={faFileUpload}  className="link-icon"/>
+          <FontAwesomeIcon icon={faFileUpload}  onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className={isHovering ? "link-icon fa-bounce" : "link-icon"}/>
         </Link>
       </div>
   )
