@@ -1,16 +1,21 @@
-import React, { useState } from "react";
-import { MapContainer , TileLayer, Marker, Popup } from "react-leaflet";
+import React, { useState,useRef } from "react";
+import { MapContainer , TileLayer, Marker, Popup  } from "react-leaflet";
 import osm from "../osm/osm-provider";
-import { useRef } from "react";
 import "./basicMap.css";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css"
 import axios from "axios";
 import NavIcons from "../NavIcons/NavIcons";
+import useGeoLocation from "./useGeoLocation";
 
 const markerIcon = new L.Icon({
     iconUrl: require("./mapmarker.png"),
     iconSize: [35, 35],
+});
+
+const myLocationIcon = new L.Icon({
+  iconUrl: require("./myLocationMarker.png"),
+  iconSize: [35, 35],
 });
 
 const BasicMap = () => {
@@ -19,6 +24,18 @@ const BasicMap = () => {
   const ZOOM_LEVEL = 3;
   const mapRef = useRef();
 
+  const location= useGeoLocation();
+  const showMyLocation = () => {
+    if (location.loaded && !location.error) {
+      mapRef.current.flyTo(
+        [location.coordinates.lat, location.coordinates.lng],
+        15,
+        { animate: true }
+      );
+    } else {
+      alert(location.error.message);
+    }
+  };
 // data fetching
     
 React.useEffect(()=>{
@@ -42,23 +59,30 @@ if(data.length === 0){
         <div className="col">
       
           <MapContainer  center={center} zoom={ZOOM_LEVEL} ref={mapRef}>
-            <TileLayer url={osm.maptiler.url}>
-            </TileLayer>
+            <TileLayer url={osm.maptiler.url}></TileLayer>
+           
             {
               data.map(val=>{
                 return(
                   <Marker position={[val.lat?val.lat:20,val.lng?val.lng:30]} icon={markerIcon} > 
                   <Popup>
-                      <b>{val.event?val.event:"happy"}</b>
+                  <a href={val.image}>{val.event}</a>
                    </Popup> 
-                   
               </Marker>
-              
                 );
               })
             }
-          
+          {location.loaded && !location.error && (
+                <Marker
+                  icon={myLocationIcon}
+                  position={[
+                    location.coordinates.lat,
+                    location.coordinates.lng,
+                  ]}
+                ></Marker>
+              )}
           </MapContainer >
+          <button onClick={showMyLocation}>Locate Me</button>
             <NavIcons />
           </div>
         </div>

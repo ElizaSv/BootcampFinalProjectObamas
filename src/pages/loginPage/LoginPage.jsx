@@ -8,8 +8,8 @@ const LoginPage = () => {
       <NavIcons />
       <Auth 
         requestURL = "login"
-        password={"password"}
         email={"email"}
+        password={"password"}
         buttonText={"login"}
       />
     </>
