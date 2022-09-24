@@ -66,7 +66,7 @@ const changePage = ({selected}) => {
 }
 
   return (
-      <div className="parallax">
+      <>
         <NavIcons />
         <TopSection />
         <VerticalTimeline>
@@ -83,7 +83,7 @@ const changePage = ({selected}) => {
             disabledClassName={"pagination-disabled"}
             activeClassName={"active-page"}
         />
-      </div>
+      </>
   );
 };
 export default FrontPage;

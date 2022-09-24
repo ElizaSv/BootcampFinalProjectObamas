@@ -1,42 +1,43 @@
 /* --- TIMELINE SECTION styles --- */
-/* this comment is for test */
 
-/* --- CHANGING BUILT IN CSS FOR VERTICAL TIMELINE COMPONENT --- */
+.vertical-timeline {
+    width: 100vw
+};
+.vertical-timeline-element {
+    width: 100vw;
+}
+
 .vertical-timeline::before {
-    background: rgb(123, 123, 123)
+    background: linear-gradient(red, yellow, lime, aqua, blue, magenta, red);
 }
 .vertical-timeline-element-content {
-    background-color: rgb(123, 123, 123);
-    color: ghostwhite
+    background-color:rgb(95, 81, 63);
+    color: ghostwhite;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 .vertical-timeline-element-content-arrow {
-    border-right: 7px solid  rgb(123, 123, 123);
+    border-right: 7px solid  rgb(95, 81, 63);
 }
-.vertical-timeline-element-content-icon{
-    background-color: rgb(123, 123, 123);
-    color: ghostwhite
+.vertical-timeline-element-icon{
+    background: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+    top: 6px;
+    color: ghostwhite;
+    box-shadow: none;
 }
-
-
-
-/*BUILT IN STYLE EDIT ENDS */ 
 
 .vertical-timeline-element-subtitle {
     font-size: 1.5rem;
-    color:rgb(75, 60, 60)
+    color:rgb(236, 212, 212)
 }
 
 .vertical-timeline-element--work:nth-child(odd){
     text-align: right;
 }
 
-span.vertical-timeline-element-icon{
-    background-color: rgb(123, 123, 123);
-}
-
 .timeline-img {
     width: 100%;
-    height: 350px;
+    height: 400px;
     border-radius: 5px;
     object-fit: cover;
     filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
@@ -56,7 +57,7 @@ span.vertical-timeline-element-icon{
     border-radius: 5px;
     width: 100px;
     cursor: pointer;
-    color: rgb(123, 123, 123)
+    color: rgb(95, 81, 63)
 }
 .event-btn:hover,
 .like-btn:hover {
