@@ -1,12 +1,13 @@
 import React, { useContext, useState, useEffect,useMemo } from "react";
+import axios from 'axios'
 import "./frontPage.css";
 import likes from '../../likes.json'
 import TimelineSection from "../../components/TimelineSection/TimelineSection";
 import VerticalTimeline from "react-vertical-timeline-component/dist-modules/VerticalTimeline";
 import TopSection from "../../components/TopSection/TopSection";
 import { Context } from "../../Context";
-import axios from 'axios'
 import NavIcons from "../../components/NavIcons/NavIcons";
+import ReactPaginate from "react-paginate";
 
 const FrontPage = () => {
   const {user} = useContext(Context);
@@ -51,30 +52,58 @@ const FrontPage = () => {
     }, {}),
     [likeState]
   );
-  // console.log(likeAggragation)
 
 // --- GETTING TIMELINE DATA FROM DATABASE ---//
 
-  useEffect(() => {
-    axios.get('http://localhost:8000/events').then(result => setTimelineEvents(result.data))  
-  }, [])
 
-  const sortedTimeline = timelineEvents
-    .sort((a, b) => b.year - a.year); //This should later go in useState()
+useEffect(() => {
+  axios.get('http://localhost:8000/events').then(result => setTimelineEvents(result.data))  
+}, [])
+
+const sortedTimeline = timelineEvents
+  .sort((a, b) => b.year - a.year); //This should later go in useState()
+
+
+// --- SETTING UP PAGINATION INFO --- //
+const [pageNumber, setPageNumber] = useState(0);
+const eventsPerPage = 6;
+const displayedEventCount = pageNumber * eventsPerPage
+const displayEvents = timelineEvents.slice(displayedEventCount, displayedEventCount + eventsPerPage)
+.map((event, index) => {
+    return (
+      <TimelineSection
+        key={index}
+        {...event}
+      />
+    ); })
+  const pageCount = Math.ceil(timelineEvents.length / eventsPerPage)
+  const changePage = ({selected}) => {
+        setPageNumber(selected)
+        }     
 
   return (
-    <>
-      <NavIcons />
-      <TopSection />
-      <VerticalTimeline>
+      <div className="parallax">
+        <NavIcons />
+        <TopSection />
+        <VerticalTimeline>
         {sortedTimeline.map((i, index) => ({ ...i, ...(likeAggragation[index]||{likes:0,dislikes:0}) })).map((elem, index) => {
           return (
             <TimelineSection handleLike={(value)=>handleLike(index,value)} key={index} {...elem} />
           );
         })}
       </VerticalTimeline>
-    </>
+        <ReactPaginate 
+            previousLabel={"Previous"}
+            nextLabel={"Next"}
+            pageCount={pageCount}
+            onPageChange={changePage}
+            containerClassName={"pagination-btn"}
+            previousLinkClassName={"previous-btn"}
+            nextLinkClassName={"next-btn"}
+            disabledClassName={"pagination-disabled"}
+            activeClassName={"active-page"}
+        />
+      </div>
   );
 };
-
 export default FrontPage;
