@@ -1,3 +1,4 @@
+import "./Pagination.css";
 import ReactPaginate from "react-paginate";
 import axios from 'axios'
 import { useState, useEffect } from "react";
