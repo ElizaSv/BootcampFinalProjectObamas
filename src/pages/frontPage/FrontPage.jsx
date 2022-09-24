@@ -7,7 +7,7 @@ import VerticalTimeline from "react-vertical-timeline-component/dist-modules/Ver
 import TopSection from "../../components/TopSection/TopSection";
 import { Context } from "../../Context";
 import NavIcons from "../../components/NavIcons/NavIcons";
-import Pagination from "../../components/Pagination/Pagination";
+import ReactPaginate from "react-paginate";
 
 const FrontPage = () => {
   let {user} = useContext(Context);
@@ -55,6 +55,10 @@ const displayEvents = timelineEvents.slice(displayedEventCount, displayedEventCo
         {...event}
       />
     ); })
+  const pageCount = Math.ceil(timelineEvents.length / eventsPerPage)
+  const changePage = ({selected}) => {
+        setPageNumber(selected)
+        }     
 
   return (
       <>
@@ -63,7 +67,17 @@ const displayEvents = timelineEvents.slice(displayedEventCount, displayedEventCo
         <VerticalTimeline>
             {displayEvents}
         </VerticalTimeline>
-        <Pagination />
+        <ReactPaginate 
+            previousLabel={"Previous"}
+            nextLabel={"Next"}
+            pageCount={pageCount}
+            onPageChange={changePage}
+            containerClassName={"pagination-btn"}
+            previousLinkClassName={"previous-btn"}
+            nextLinkClassName={"next-btn"}
+            disabledClassName={"pagination-disabled"}
+            activeClassName={"active-page"}
+        />
       </>
   );
 };

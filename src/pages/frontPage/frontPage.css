@@ -19,3 +19,24 @@
   background-size: cover;
 }
 
+.pagination-btn {
+  margin: 25px auto; 
+  width: 60vw;
+  height: 40px;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  font-size: 1.3rem;
+  }
+  .pagination-btn a{
+  margin: 2px 5px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  color:ghostwhite;
+  cursor: pointer;
+  }
+  
+  .pagination-btn>li {
+  width: 100px;
+  }
+  
