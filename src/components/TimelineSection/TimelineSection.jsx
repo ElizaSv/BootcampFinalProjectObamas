@@ -3,7 +3,7 @@ import { VerticalTimelineElement } from "react-vertical-timeline-component/dist-
 import "react-vertical-timeline-component/style.min.css";
 import "./TimelineSection.css";
 import { Context } from "../../Context";
-//import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+
 
 const TimelineSection = (props) => {
   let { user } = useContext(Context);
@@ -37,7 +37,7 @@ const TimelineSection = (props) => {
             className="like-btn"
             onClick={likeHandler}
             disabled={props.youLiked}
-            style={{ background: props.youLiked ? "blue" : "white" }}
+            style={{ background: props.youLiked ? "#c2a8a8" : "white" }}
           >
             Like {props.likes > 0 ? props.likes : null}
           </button>
@@ -45,7 +45,7 @@ const TimelineSection = (props) => {
             className="like-btn"
             onClick={dislikeHandler}
             disabled={props.youDisliked}
-            style={{ background: props.youDisliked ? "red" : "white" }}
+            style={{ background: props.youDisliked ? "#c5a892" : "white" }}
           >
             Dislike {props.dislikes > 0 ? props.dislikes : null}
           </button>
