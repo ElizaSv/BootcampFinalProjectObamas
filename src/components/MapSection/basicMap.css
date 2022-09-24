@@ -1,5 +1,5 @@
 .leaflet-container {
-    height: 100vh;
+    height: 90vh;
     width: 100%;
   }
   .chip {
@@ -22,4 +22,24 @@
   .static-map {
     width: 250px;
     height: 250px;
+  }
+  .col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top:10px ;
+  }
+  .locationBtn{
+    width: 90%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color:#6088a36b;
+    color: rgba(46, 38, 116, 0.514);
   }

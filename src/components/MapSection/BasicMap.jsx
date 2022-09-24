@@ -7,14 +7,15 @@ import "leaflet/dist/leaflet.css"
 import axios from "axios";
 import NavIcons from "../NavIcons/NavIcons";
 import useGeoLocation from "./useGeoLocation";
+import MapBtn from "./mapBtn";
 
 const markerIcon = new L.Icon({
-    iconUrl: require("./mapmarker.png"),
+    iconUrl: require("./mapMarkers/mapmarker.png"),
     iconSize: [35, 35],
 });
 
 const myLocationIcon = new L.Icon({
-  iconUrl: require("./myLocationMarker.png"),
+  iconUrl: require("./mapMarkers/myLocationMarker.png"),
   iconSize: [35, 35],
 });
 
@@ -54,13 +55,10 @@ if(data.length === 0){
   return (
    
     <div className="row"> 
-   
       <div className="col text-center">
         <div className="col">
-      
           <MapContainer  center={center} zoom={ZOOM_LEVEL} ref={mapRef}>
             <TileLayer url={osm.maptiler.url}></TileLayer>
-           
             {
               data.map(val=>{
                 return(
@@ -82,7 +80,8 @@ if(data.length === 0){
                 ></Marker>
               )}
           </MapContainer >
-          <button onClick={showMyLocation}>Locate Me</button>
+          <button className="locationBtn" onClick={showMyLocation}>Locate Me</button>
+          
             <NavIcons />
           </div>
         </div>
