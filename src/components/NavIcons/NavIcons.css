@@ -1,17 +1,24 @@
+html {
+  box-sizing: border-box;
+ }
+
 .links{
-     position: absolute; 
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    top: 0%;
-    left: 95%;
-    z-index: 999;
+    position: fixed;
+    height: 100%;
+    top: 25%;
+    right: 1%;
+    gap: 60px;
+    z-index: 999
+
 }
 .link-icon{
-    height: 22px;
-    color: rgba(194, 188, 181, 0.712);
-    z-index: 2;
+    display: block;
+    height: 40px;
+    padding: 15px;
+    margin: 20px 0; 
+    color: ghostwhite;
 }
 .link-icon:hover{
-  color: #c2a8a8;
+  color: #9e9b9b;
+  transition: .5s;
 }
