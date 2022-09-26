@@ -14,7 +14,7 @@ const markerIcon = new L.Icon({
   iconSize: [35, 35],
 });
 
-const myLocationIcon = new L.Icon({
+const MyLocationIcon = new L.Icon({
   iconUrl: require("./mapMarkers/myLocationMarker.png"),
   iconSize: [35, 35],
 });
@@ -26,7 +26,7 @@ const BasicMap = () => {
   const mapRef = useRef();
 
   const location = useGeoLocation();
-  const showMyLocation = (props) => {
+  const showMyLocation = () => {
     if (location.loaded && !location.error) {
       mapRef.current.flyTo(
         [location.coordinates.lat, location.coordinates.lng],
@@ -73,12 +73,11 @@ const BasicMap = () => {
             })}
             {location.loaded && !location.error && (
               <Marker
-                icon={myLocationIcon}
+                icon={MyLocationIcon}
                 position={[location.coordinates.lat, location.coordinates.lng]}
               ></Marker>
             )}
           </MapContainer>
-      
           <button className="locationBtn" onClick={showMyLocation}>
             Locate Me
           </button>
