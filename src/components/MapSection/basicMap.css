@@ -40,6 +40,12 @@
     justify-content: center;
     align-items: center;
     border: none;
-    background-color:#6088a36b;
-    color: rgba(46, 38, 116, 0.514);
+    border-radius: 20px;
+    background-color:#22343ff5;
+    color: rgb(198, 195, 218);
   }
+.locationBtn:hover{
+  background-color:#4d606bf5;
+  scale: 1.1;
+
+}
