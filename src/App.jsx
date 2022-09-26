@@ -20,16 +20,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<FrontPage />} />
-
-        <Route
-          path="/register"
-          element={user ? <Navigate replace to="/" /> : <RegisterPage />}
-        />
-
-       
-          <Route path="/login" element={ user ? <Navigate replace to = "/"/> : <LoginPage />} />
-      
-
+        <Route path="/register" element={user ? <Navigate replace to="/" /> : <RegisterPage />}/>
+        <Route path="/login" element={ user ? <Navigate replace to = "/"/> : <LoginPage />} />
         <Route path="/map" element={<MapPage />} />
         <Route path="/submit" element={<SubmitEventPage />} />
       </Routes>
