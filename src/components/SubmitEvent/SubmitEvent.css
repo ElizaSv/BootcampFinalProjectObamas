@@ -16,7 +16,7 @@ body {
 
 .submit-wrapper {
     position: relative;
-    top:30px;
+    top:10%;
     height: 80vh;
     width: 85%;
     margin: 0 auto;
@@ -64,13 +64,22 @@ body {
     text-align: center;
     color: rgb(83, 57, 57);
 }
+.arrow {
+    color: ghostwhite;
+    font-size: 3rem;
+    margin: 10px;
+    width: 100%;
+    align-self: flex-end;
+}
 #form-img {
     width:90%;
     height: auto;
     border-radius: 10px;
+    padding-top: 20px;
 }
 .bottom-right {
     color: rgb(112, 112, 113);
+    width: 50%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -81,8 +90,8 @@ body {
     height: 100%;
     padding: 20px;
     margin: 0 auto;
-    background-color: ghostwhite;
     border-radius: 10px;
+    font-size: 1.2rem;
 }
 .bottom-right>form>input {
     position: relative;
@@ -96,8 +105,10 @@ body {
     border-radius: 4px;
     text-indent: 10px;
 }
-.bottom-right>input::placeholder {
-    font-size: 1.5rem;
+input::placeholder {
+    font-size: 1.2rem;
+    color:rgb(172, 153, 153);
+    align-self: center;
     
 }
 .error-msg {
@@ -106,4 +117,35 @@ body {
     position: relative;
     left:15px;
     top:-10px;
+}
+
+@media (max-width:1220px) {
+    .submit-wrapper{
+        height: fit-content;
+        width: 80%;
+    }
+    .content-top {
+        font-size: larger;
+        text-align: center;
+        margin-top: 20px;
+        width: 80%;
+    }
+    .content-bottom{
+        flex-direction: column;
+    }
+    .submit-descr{
+        width: 100%;
+    }
+    .bottom-left{
+        width: 100%;
+    }
+    .hide{
+        display:none
+    }
+    .bottom-right{
+        width: 100%;
+    }
+    .bottom-right>form>input {
+        width: 100%;
+    }
 }

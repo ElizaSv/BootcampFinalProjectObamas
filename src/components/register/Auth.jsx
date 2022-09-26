@@ -16,7 +16,7 @@ const Auth = ({requestURL, buttonText, userName, password, email}) => {
   const reason = searchParams.get('reason');
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value })
   };
 
   const submitForm = async () => {

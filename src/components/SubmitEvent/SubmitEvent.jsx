@@ -1,11 +1,14 @@
 import axios from 'axios'
 import './SubmitEvent.css'
 import { useForm } from "react-hook-form";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faArrowCircleRight} from "@fortawesome/free-solid-svg-icons";
+import {Routes, Route, useNavigate} from 'react-router-dom'
 
 const SubmitEvent = () => {
  
     const { register, handleSubmit, formState: { errors } } = useForm();
-    
+    const navigate = useNavigate();
     const onSubmit = async formData => {
         const convertToBase64 = file => new Promise((resolve, reject) => {
             const reader = new FileReader();
@@ -18,9 +21,8 @@ const SubmitEvent = () => {
                 return await convertToBase64(formData.image[0])
             } catch (error) {
                 console.error(error)
-            }
-        }
-                     
+            }}
+                    
         const createdEvent = JSON.stringify(formData);
         const normalObj = JSON.parse(createdEvent)
         normalObj.image = await getURL()
@@ -29,7 +31,19 @@ const SubmitEvent = () => {
         axios
         .post('http://localhost:8000/events/new', resultingEvent, {headers: {'Content-Type': 'application/json'}})
         .then(response => console.log(response.data))
-        .catch(error => {console.log(error.data)});}
+        .catch(error => {console.log(error.data)});
+        
+
+        const navigateToFront = ()=> {
+            navigate('/')
+        }
+        
+        setTimeout(navigateToFront(), 1000)
+       
+    
+    }
+
+ 
 
     return (
         <div className='submit-wrapper'>
@@ -39,6 +53,7 @@ const SubmitEvent = () => {
             <div className='content-bottom'>
                 <div className='bottom-left'>
                     <h4 className='submit-descr'> If you have met or been in an event with Obama family, please fill in this form and send it to us and we will post it in our timeline! </h4>
+                    <FontAwesomeIcon icon={faArrowCircleRight} className="arrow hide" />
                     <img src="https://s.yimg.com/os/creatr-uploaded-images/2020-01/8129d430-393a-11ea-bbfe-64598fa98387" id="form-img"></img>
                 </div>
                 <div className='bottom-right'>
@@ -57,7 +72,7 @@ const SubmitEvent = () => {
                                 {errors.notes && <span className="error-msg">This field is required!</span>}<br />
                         <label> Do you have an image from that event? </label>
                             <input type="file" accept="image/*" placeholder=' choose your image' name="image" {...register("image")}></input>
-                        <input type="submit" value="Submit" ></input>
+                        <input type="submit" value="Submit"></input>
                     </form>
                 </div>
             </div>
