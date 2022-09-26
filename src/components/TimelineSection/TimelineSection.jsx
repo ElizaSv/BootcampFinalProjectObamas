@@ -39,8 +39,11 @@ const TimelineSection = (props) => {
 // --- GETTING TIMELINE DATA FROM DATABASE ---//
 useEffect(() => {
   axios.get('http://localhost:8000/events')
-    .then(result => setTimelineEvents(result.data.sort((a, b) => b.year - a.year)))  
+    .then(result => setTimelineEvents(result.data))  
 }, [])
+useMemo(()=> {
+  setTimelineEvents(timelineEvents.sort((a, b) => b.year - a.year))
+}, [timelineEvents])
 
 const handleLike = (postId, value) => {
   let index = likeState.findIndex(like=>like.postId === postId)
