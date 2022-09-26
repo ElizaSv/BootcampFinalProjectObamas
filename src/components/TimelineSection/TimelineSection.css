@@ -1,7 +1,9 @@
 /* --- TIMELINE SECTION styles --- */
 
 .vertical-timeline {
-    width: 100vw
+    width: 100vw;
+    position: relative;
+    left: -10px
 };
 .vertical-timeline-element {
     width: 100vw;

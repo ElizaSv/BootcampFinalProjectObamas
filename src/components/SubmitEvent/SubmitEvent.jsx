@@ -38,12 +38,10 @@ const SubmitEvent = () => {
             navigate('/')
         }
         
-        setTimeout(navigateToFront(), 1000)
+        setTimeout(navigateToFront(), 2000)
        
     
     }
-
- 
 
     return (
         <div className='submit-wrapper'>

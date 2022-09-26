@@ -11,7 +11,6 @@
       overflow-x: hidden;
   }
 
-
   .pagination-btn {
     margin: 25px auto; 
     width: 60vw;
@@ -33,7 +32,3 @@
     width: 100px;
     }
     
-    .scroll-to-top {
-      cursor: pointer;
-    }
-  
